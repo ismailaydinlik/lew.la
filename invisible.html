@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><link rel="apple-touch-icon" sizes="180x180" href="favicons/static-apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="favicons/static-favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicons/static-favicon-16x16.png"><link rel="manifest" href="/static/site.webmanifest"><link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#14141f"><link rel="shortcut icon" href="favicons/static-favicon.ico"><meta name="msapplication-TileColor" content="#ffd026"><meta name="msapplication-config" content="/static/browserconfig.xml"><meta name="theme-color" content="#ffd026"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lew.la | Discord Invisible Name</title><meta name="title" content="lew.la | Discord Invisible Name"><meta name="description" content="Get an invisible name and avatar on Discord."><meta property="og:type" content="website"><meta property="og:url" content="https://lew.la/invisible/"><meta property="og:title" content="lew.la | Discord Invisible Name"><meta property="og:description" content="Get an invisible name and avatar on Discord."><meta property="twitter:card" content="summary"><meta property="twitter:url" content="https://lew.la/invisible/"><meta property="twitter:title" content="lew.la | Discord Invisible Name"><meta property="twitter:description" content="Get an invisible name and avatar on Discord."><style>
+body {
+    line-height: 1.5;
+}
+label {
+    font-size: .875rem;
+    line-height: 1.8;
+}
+html {
+    -webkit-box-sizing: border-box;
+}
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+a {
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+*, ::after, ::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+</style><link rel="stylesheet" href="css/static-normalize.min.css"><script src="js/static-jquery.min.js"></script><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet"><link href="css/static-main.css" rel="stylesheet" media="screen"><style>
+  .header {
+    border-top: #f9961b solid 10px;
+  }
+  .site-title a {
+    color: #f9961b;
+  }
+  .main {
+    margin-top: 40px;
+  }
+  #copy-panel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 500px;
+    color: #f9961b;
+    background-color: #181823;
+    height: 100px;
+    border: 2px dashed #f9961b;
+    line-height: 90px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.5s;
+    user-select: none;
+    margin-bottom: 20px;
+  }
+
+  #copy-panel:hover {
+    background-color: #0f0f19;
+    transform: scale(1.025);
+  }
+  #copy-panel.clicked {
+    border: 2px solid #f9961b;
+    transform: rotateX(360deg);
+  }
+  .download-container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .avatar-download {
+    color: #f9961b;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+  }
+  .avatar-download:hover, .avatar-download:active, .avatar-download:focus{
+    color: #f9961b;
+  }
+  .explanation {
+    color: #f1f1f1;
+    text-align: left;
+    margin-bottom: 40px;
+    background: #191925;
+    max-width: 800px;
+    width: 90%;
+    padding: 15px 25px;
+    border-left: 5px solid #f9961b;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+</style><style>
+.video-column {
+    display: flex;
+    align-items: center;
+    width: 33%;
+}
+@media screen and (max-width: 39.99875em)
+{
+ .video-column {
+    width: 100%;
+    display: block;
+    padding: 10px;
+ }
+ .video-column img{
+     max-width: 200px;
+ }
+ .downloaded-video {
+     display: block;
+ }
+ .save-button, .download-button {
+    display: block;
+ }
+ .video-column .loading {
+    position: fixed;
+    left: 48%;
+ }
+}
+
+</style></head><body>
+  
+<div class="grid-x navigation-section">
+	<div class="header">
+		<div class="site-title"><a href="lew.html">lew.la</a><span class="site-subheading">discord invisible name</span></div>
+	</div>
+</div>
+<div class="main">
+	<p class="explanation">To make your Discord name invisible, set your server nickname and avatar to the ones given below.<br>If you then appear offline you will be almost undetectable on the server members list.</p>
+	<div id="copy-panel">
+		Click here to copy the username
+	</div>
+	<div class="download-container">
+		<a href="download.html" target="_blank" class="avatar-download">Click here to download an invisible avatar</a>
+	</div>
+</div>
+<input type="hidden" value="" id="copy-input"><script>
+function textToClipboard(text) {
+  var dummy = document.createElement("textarea");
+  document.body.appendChild(dummy);
+  dummy.value = text;
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+}
+$("#copy-panel").on('click', function() {
+  var e = document.getElementById("copy-panel");
+  e.classList.add("clicked");
+  e.innerHTML = "Copied to clipboard!";
+  textToClipboard("&#7356;&#7356;&#7356;&#7356;&#7356;&#7356;");
+});
+</script></body></html>

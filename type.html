@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><link rel="apple-touch-icon" sizes="180x180" href="favicons/static-apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="favicons/static-favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicons/static-favicon-16x16.png"><link rel="manifest" href="/static/site.webmanifest"><link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#14141f"><link rel="shortcut icon" href="favicons/static-favicon.ico"><meta name="msapplication-TileColor" content="#ffd026"><meta name="msapplication-config" content="/static/browserconfig.xml"><meta name="theme-color" content="#ffd026"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lew.la | Typing Game</title><meta name="title" content="lew.la | Typing Game"><meta name="description" content="Test your typing speed."><meta property="og:type" content="website"><meta property="og:url" content="https://lew.la/type/"><meta property="og:title" content="lew.la | Typing Game"><meta property="og:description" content="Test your typing speed."><meta property="twitter:card" content="summary"><meta property="twitter:url" content="https://lew.la/type/"><meta property="twitter:title" content="lew.la | Typing Game"><meta property="twitter:description" content="Test your typing speed."><style>
+body {
+    line-height: 1.5;
+}
+label {
+    font-size: .875rem;
+    line-height: 1.8;
+}
+html {
+    -webkit-box-sizing: border-box;
+}
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+a {
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+*, ::after, ::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+</style><link rel="stylesheet" href="css/static-normalize.min.css"><script src="js/static-jquery.min.js"></script><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet"><link href="css/static-main.css" rel="stylesheet" media="screen"><style>
+  .header {
+    border-top: #f9b51b solid 10px;
+  }
+  .site-title a {
+    color: #f9b51b;
+  }
+  .main {
+    margin-top: 40px;
+  }
+  .bigtext-form {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 5px solid #f9b51b;
+    padding: 20px;
+    background: #191925;
+    color: #fefefe;
+  }
+  label {
+    color: #fefefe;
+    margin: 5px;
+    font-weight: bold;
+  }
+  .bigtext-input, .bigtext-input:active, .bigtext-input:focus, .bigtext-input:hover {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: 10px 20px;
+    color: #fefefe;
+    background: #0f0f17;
+    border: 0;
+    padding: 15px;
+    height: auto;
+    max-width: none;
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .bigtext-input::placeholder {
+    color: #becaca;
+    opacity: 1;
+    overflow: visible;
+    text-align: center;
+  }
+
+  .bigtext-input:-ms-input-placeholder {
+    color: #becaca;
+    overflow: visible;
+    text-align: center;
+  }
+
+  .bigtext-input::-ms-input-placeholder {
+    color: #becaca;
+    overflow: visible;
+    text-align: center;
+  }
+
+  .bigtext-input:active, .bigtext-input:focus {
+    background: #040406;
+  }
+
+  .bigtext-input:focus::-webkit-input-placeholder { color:transparent; }
+  .bigtext-input:focus:-moz-placeholder { color:transparent; }
+  .bigtext-input:focus::-moz-placeholder { color:transparent; }
+  .bigtext-input:focus:-ms-input-placeholder { color:transparent; }
+
+  #bigtext-output{
+    background-color: #0f0f17;
+    cursor: auto;
+  }
+
+  #current_word {
+    padding: 0px 20px 10px 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #f9b51b;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .stats {
+    padding: 20px;
+  }
+  .statistic {
+    padding: 5px;
+    color: #f9b51b;
+    font-weight: bold;
+  }
+  .statistic span{
+    color: #fff;
+    font-weight: normal;
+    padding-left: 5px;
+  }
+
+</style><style>
+.video-column {
+    display: flex;
+    align-items: center;
+    width: 33%;
+}
+@media screen and (max-width: 39.99875em)
+{
+ .video-column {
+    width: 100%;
+    display: block;
+    padding: 10px;
+ }
+ .video-column img{
+     max-width: 200px;
+ }
+ .downloaded-video {
+     display: block;
+ }
+ .save-button, .download-button {
+    display: block;
+ }
+ .video-column .loading {
+    position: fixed;
+    left: 48%;
+ }
+}
+
+</style></head><body>
+  
+<div class="grid-x navigation-section">
+	<div class="header">
+		<div class="site-title"><a href="lew.html">lew.la</a><span class="site-subheading">typing game</span></div>
+	</div>
+</div>
+<div id="success-message" style="display: none;"></div>
+<div id="error-message" style="display: none;"></div>
+<div class="main">
+	<div class="bigtext-form">
+    <div id="current_word"></div>
+		<label>
+			<input type="text" placeholder="Type here" class="bigtext-input" id="word-input"></label>
+    <div class="stats-container">
+    <div class="stats">
+      <div class="statistic">Score <span id="score">0</span></div>
+      <div class="statistic">WPM <span id="wpm">0</span></div>
+    </div>
+    </div>
+    <span id="active_time" style="font-size: 1.2rem; font-weight: bold; text-align: center; display: block; margin-bottom: 20px;">
+  </span></div>
+</div>
+<script>
+var current_word = "";
+var words_done = 0;
+var startTime = null;
+var words_list = null;
+
+$.get('/static/words.txt', function(data) {
+  words_list = data.split("\n");
+  new_word();
+});
+
+function new_word() {
+  var new_word = words_list[Math.floor(Math.random() * words_list.length)];
+  current_word = new_word;
+  $("#current_word").html(new_word);
+  return new_word;
+}
+
+$("#word-input").select();
+
+function updateTime()
+{
+	var elapsedTime = ((Date.now()-startTime)/1000).toFixed(2);
+	$("#active_time").text(elapsedTime);
+	var wps = words_done/elapsedTime;
+	$("#wpm").text((wps*60).toFixed(0));
+	return elapsedTime;
+}
+
+$("#word-input").on('input',function(){
+	if(startTime == null)
+	{
+		startTime = Date.now();
+	  setInterval(updateTime, 10);
+	}
+	
+  $("#word-input").val($("#word-input").val().replace(" ", ""));
+	
+	if($("#word-input").val().toLowerCase() == current_word.toLowerCase().replace(/(\r\n|\n|\r)/gm,""))
+	{
+    console.log("Match");
+    words_done++;
+    $("#score").text(words_done);
+    $("#word-input").val("").focus();
+
+    new_word();
+  }
+
+
+});
+
+
+</script></body></html>

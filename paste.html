@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><link rel="apple-touch-icon" sizes="180x180" href="favicons/static-apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="favicons/static-favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicons/static-favicon-16x16.png"><link rel="manifest" href="/static/site.webmanifest"><link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#14141f"><link rel="shortcut icon" href="favicons/static-favicon.ico"><meta name="msapplication-TileColor" content="#ffd026"><meta name="msapplication-config" content="/static/browserconfig.xml"><meta name="theme-color" content="#ffd026"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lew.la | Paste</title><meta name="title" content="lew.la | Paste"><meta name="description" content="Save and share snippets of text."><meta property="og:type" content="website"><meta property="og:url" content="https://lew.la/paste/"><meta property="og:title" content="lew.la | Paste"><meta property="og:description" content="Save and share snippets of text."><meta property="twitter:card" content="summary"><meta property="twitter:url" content="https://lew.la/paste/"><meta property="twitter:title" content="lew.la | Paste"><meta property="twitter:description" content="Save and share snippets of text."><style>
+body {
+    line-height: 1.5;
+}
+label {
+    font-size: .875rem;
+    line-height: 1.8;
+}
+html {
+    -webkit-box-sizing: border-box;
+}
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+a {
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+*, ::after, ::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+</style><link rel="stylesheet" href="css/static-normalize.min.css"><script src="js/static-jquery.min.js"></script><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet"><link href="css/static-main.css" rel="stylesheet" media="screen"><style>
+  .header {
+    border-top: #b81bf9 solid 10px;
+  }
+  .site-title a {
+    color: #b81bf9;
+  }
+  .main {
+    margin-top: 40px;
+  }
+
+  .paste-input, .paste-input:active, .paste-input:focus, .paste-input:hover {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: 10px 20px;
+    color: #fefefe;
+    background: #0f0f17;
+    border: 0;
+    padding: 15px;
+    height: auto;
+    max-width: none;
+    margin-top: 5px;
+    display: block;
+  }
+
+  .paste-input::placeholder {
+    color: #becaca;
+    opacity: 1;
+  }
+
+  .paste-input:-ms-input-placeholder {
+    color: #becaca;
+  }
+
+  .paste-input::-ms-input-placeholder {
+    color: #becaca;
+  }
+
+  .paste-input:focus::-webkit-input-placeholder { color:transparent; }
+  .paste-input:focus:-moz-placeholder { color:transparent; }
+  .paste-input:focus::-moz-placeholder { color:transparent; }
+  .paste-input:focus:-ms-input-placeholder { color:transparent; }
+
+  .new-paste{
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 5px solid #b81bf9;
+  }
+  .new-paste-top {
+    background: #191925;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  label {
+    color: #fefefe;
+    width: 100%;
+    max-width: none;
+    margin: 5px;
+    font-weight: bold;
+  }
+  .new-paste-body {
+    color: #fefefe;
+    background-color: #0f0f17;
+    height: auto;
+
+  }
+  .error-message {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background: #191925;
+    margin-bottom: 20px;
+    color: #fefefe;
+    border-left: 5px solid #b81bf9;
+  }
+  .new-paste-body textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fefefe;
+    background-color: #0f0f17;
+    border: 0;
+    box-shadow: none;
+    height: 100%;
+    min-width: 100%;
+    min-height: 200px;
+    padding: 20px;
+    max-height: 50vh;
+    margin-bottom: 0;
+    max-width: 90%;
+  }
+  .new-paste-bottom {
+    padding: 20px;
+    background: #191925;
+  }
+  #paste-title-input {
+    border-left-color: #b81bf9;
+  }
+  #paste-title-input:focus, #paste-title-input:active {
+    border-left: 2px solid #b81bf9;
+  }
+
+  .save-button {
+    background-color: #0f0f17;
+    padding: 15px 25px 17px 20px;
+    border: 0;
+    border-left: 5px solid #b81bf9;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
+    outline: none;
+    transition: 0.5s;
+  }
+  .save-button:hover {
+    background: #14141f;
+  }
+
+  /* Small only */
+  @media screen and (max-width: 39.9375em) {
+     .save-button {
+         max-width: 100%!important;
+     }
+  }
+
+  /* small and medium */
+  @media screen and (max-width: 63.9375em) {
+    .new-paste-top {
+      display: block;
+    }
+  }
+
+  /* Medium and up */
+  @media screen and (min-width: 40em) {}
+
+  /* Medium only */
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+  /* Large and up */
+  @media screen and (min-width: 64em) {}
+
+  /* Large only */
+  @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+</style><style>
+.video-column {
+    display: flex;
+    align-items: center;
+    width: 33%;
+}
+@media screen and (max-width: 39.99875em)
+{
+ .video-column {
+    width: 100%;
+    display: block;
+    padding: 10px;
+ }
+ .video-column img{
+     max-width: 200px;
+ }
+ .downloaded-video {
+     display: block;
+ }
+ .save-button, .download-button {
+    display: block;
+ }
+ .video-column .loading {
+    position: fixed;
+    left: 48%;
+ }
+}
+
+</style></head><body>
+  
+<div class="grid-x navigation-section">
+	<div class="header">
+		<div class="site-title"><a href="lew.html">lew.la</a><span class="site-subheading">paste</span></div>
+	</div>
+</div>
+<div class="main">
+  
+	<div class="new-paste">
+		<div class="new-paste-top">
+			<label>
+				Paste Title
+				<input type="text" placeholder="Paste Title" class="paste-input" id="paste-title-input"></label>
+		</div>
+		<div class="new-paste-body">
+			<textarea id="paste-body-input"></textarea></div>
+		<div class="new-paste-bottom">
+			<input class="save-button" type="submit" value="Save Paste" style="max-width: 300px"></div>
+	</div>
+</div>
+<script>
+  var csrf_token = "IjUxNmI1YTNkYmRmNTBiNTk5MmQ0ZjYwYTVmMGEzMjEzNjMwNzhmNmMi.YDaKoA.Y9qfFxI1nEQzYAnx4sLnCh1OcQI";
+  $.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+      if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+        xhr.setRequestHeader("X-CSRFToken", csrf_token);
+      }
+    }
+  });
+
+  $(".save-button").on('click', function(){
+    new_paste();
+  });
+
+	function new_paste() {
+    var paste_visibility = $("#paste-vis-input").val();
+    var paste_body = $("#paste-body-input").val();
+    var paste_title = $("#paste-title-input").val();
+
+		$.ajax({
+			url: '/api/paste/new/',
+			method: 'POST',
+			data: JSON.stringify({paste_title: paste_title, paste_visibility: "public", paste_body: paste_body}),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+			success: function(data, status, xhr) {
+				if(data["response"] == 200){
+          window.location = "/paste/" + data['paste']['id'];
+        }
+        else {
+          console.log("error: " + data["error"])
+        }
+			}
+		});
+	}
+</script></body></html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><link rel="apple-touch-icon" sizes="180x180" href="favicons/static-apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="favicons/static-favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicons/static-favicon-16x16.png"><link rel="manifest" href="/static/site.webmanifest"><link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#14141f"><link rel="shortcut icon" href="favicons/static-favicon.ico"><meta name="msapplication-TileColor" content="#ffd026"><meta name="msapplication-config" content="/static/browserconfig.xml"><meta name="theme-color" content="#ffd026"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lew.la | API</title><meta name="title" content="lew.la | API"><meta name="description" content="Random API things"><meta property="og:type" content="website"><meta property="og:url" content="https://lew.la/api/"><meta property="og:title" content="lew.la | API"><meta property="og:description" content="Random API things"><meta property="twitter:card" content="summary"><meta property="twitter:url" content="https://lew.la/api/"><meta property="twitter:title" content="lew.la | API"><meta property="twitter:description" content="Random API things"><style>
+body {
+    line-height: 1.5;
+}
+label {
+    font-size: .875rem;
+    line-height: 1.8;
+}
+html {
+    -webkit-box-sizing: border-box;
+}
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+a {
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+*, ::after, ::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+</style><link rel="stylesheet" href="css/static-normalize.min.css"><script src="js/static-jquery.min.js"></script><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet"><link href="css/static-main.css" rel="stylesheet" media="screen"><style>
+.main {
+    margin-top: 40px;
+}
+.api-endpoint {
+    max-width: 900px;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.api-endpoint-body {
+    background: #191925;
+    width: 100%;
+    padding: 0px;
+    color: #ffd026;
+}
+.endpoint-title {
+    font-weight: bold;
+    padding: 20px;
+    background: #0f0f17;
+}
+.endpoint-desc {
+    color: #fefefe;
+    padding: 15px 20px 20px 20px;
+}
+.example-response {
+    background: #0f0f17;
+    padding: 20px;
+    overflow-x: auto;
+}
+.example-title {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+</style><style>
+.video-column {
+    display: flex;
+    align-items: center;
+    width: 33%;
+}
+@media screen and (max-width: 39.99875em)
+{
+ .video-column {
+    width: 100%;
+    display: block;
+    padding: 10px;
+ }
+ .video-column img{
+     max-width: 200px;
+ }
+ .downloaded-video {
+     display: block;
+ }
+ .save-button, .download-button {
+    display: block;
+ }
+ .video-column .loading {
+    position: fixed;
+    left: 48%;
+ }
+}
+
+</style></head><body>
+  
+<div class="grid-x navigation-section">
+	<div class="header">
+		<div class="site-title"><a href="lew.html">lew.la</a><span class="site-subheading">api stuff</span></div>
+	</div>
+</div>
+<div class="main">
+    <div class="api-endpoint">
+        <div class="api-endpoint-body">
+            <div class="endpoint-title">GET /api/useragent</div>
+            <div class="endpoint-desc">
+                Returns your browser User Agent.
+                <span class="example-title">Example Response</span>
+                <pre class="example-response">
+{
+    "useragent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/601.5"
+}</pre>
+            </div>
+        </div>
+    </div>
+    <div class="api-endpoint">
+        <div class="api-endpoint-body">
+            <div class="endpoint-title">GET /api/word</div>
+            <div class="endpoint-desc">
+                Returns a random English word.
+                <span class="example-title">Example Response</span>
+                <pre class="example-response">
+[
+    "radios"
+]</pre>
+            </div>
+        </div>
+    </div>
+    <div class="api-endpoint">
+        <div class="api-endpoint-body">
+            <div class="endpoint-title">GET /api/word/[count]</div>
+            <div class="endpoint-desc">
+                Returns a given amount of random English words (max 100 per request).
+                <span class="example-title">Example Response</span>
+                <pre class="example-response">
+[
+    "astronomy", 
+    "philosophy", 
+    "shipping", 
+    "mic", 
+    "shell"
+]</pre>
+            </div>
+        </div>
+    </div>
+    <div class="api-endpoint">
+        <div class="api-endpoint-body">
+            <div class="endpoint-title">GET /api/steam/get_player_count/[appid]</div>
+            <div class="endpoint-desc">
+                Returns the amount of players playing a given Steam game.
+                <span class="example-title">Example Response</span>
+                <pre class="example-response">
+{
+    "gameid": 730, 
+    "player_count": 791898
+}</pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body></html>
